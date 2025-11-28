@@ -1,44 +1,30 @@
 MNIST Handwritten Digit Recognizer
-This project builds a Convolutional Neural Network (CNN) model to recognize handwritten digits using the MNIST dataset. The model is trained on 60,000 images and tested on 10,000 images, achieving high accuracy. It can correctly classify digits from 0 to 9 based on image input.
+This project uses a Convolutional Neural Network (CNN) to recognize handwritten digits from the MNIST dataset. The model is trained using TensorFlow/Keras and achieves high accuracy on the test set.
 
-Project Features
-• Uses MNIST dataset for training and testing
-• CNN architecture with Conv2D, MaxPooling2D, Flatten, and Dense layers
-• Achieves close to 99 percent accuracy
-• Includes visualization of predictions
-• Saved trained model file for reuse and deployment
+Features
+Recognizes digits (0–9) from 28x28 grayscale images
+Trained using a simple CNN model
+Achieves around 98–99% accuracy
+Includes saved model file for reuse
+Demo code to test the model with any image
 
-Tech Stack
-• Python
-• TensorFlow / Keras
-• NumPy
-• Matplotlib
-• Google Colab
+Dataset
+The MNIST dataset contains 60,000 training and 10,000 testing handwritten digit images.
+Files in this repository
+MNIST_Digit_Recognizer.ipynb
+mnist_digit_recognizer.h5 (saved CNN model)
 
-Project Structure
-mnist-digit-recognizer/
-│── MNIST_Digit_Recognizer.ipynb
-│── mnist_digit_recognizer.h5
-│── README.md
+How to run the project
+Install required libraries:
+pip install tensorflow numpy matplotlib
+Open the notebook
+Run all cells to train or load the model
+test predictions on sample images
 
-How the Model Works
-The MNIST dataset is loaded and normalized
-Data is reshaped for the CNN input layer
-A CNN is created and trained for 5 epochs
-Model performance is evaluated using test images
-The trained model is saved in .h5 format
-Predictions are visualized using sample test digits
+Model Summary
+The model includes convolution layers, pooling layers, and dense layers to classify digits accurately.
 
-Sample Prediction Code
-Use this code inside your notebook to test any digit:
-
-sample = X_test[index].reshape(1,28,28,1)
+Example prediction code
+sample = x_test[index].reshape(1, 28, 28, 1)
 pred = model.predict(sample)
 print("Predicted Digit:", pred.argmax())
-
-Model Accuracy
-Test Accuracy: approximately 98 to 99 percent
-
-Author
-Vaibhavi Mule
-AI Intern at Codec Technologies
